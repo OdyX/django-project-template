@@ -6,14 +6,14 @@ TEMPLATE_DEBUG = DEBUG
 SECRET_KEY = 'notsosecret'
 NEVERCACHE_KEY = 'notsosecret'
 
-INSTALLED_APPS += (
+INSTALLED_APPS = tuple(list(INSTALLED_APPS) + [
     'debug_toolbar',
     'django_extensions',
-)
+])
 
 DEBUG_TOOLBAR_CONFIG = {"INTERCEPT_REDIRECTS": False}
 
 INTERNAL_IPS = ('127.0.0.1',)
-MIDDLEWARE_CLASSES += (
+MIDDLEWARE_CLASSES = tuple(list(MIDDLEWARE_CLASSES) + [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
-)
+])

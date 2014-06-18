@@ -46,7 +46,7 @@ PROJECT_APPS = tuple(['apps.' + aname
                      for aname in os.listdir(APPS_DIR)
                      if os.path.isdir(os.path.join(APPS_DIR, aname))])
 
-INSTALLED_APPS = UPSTREAM_APPS + PROJECT_APPS
+INSTALLED_APPS = tuple(list(UPSTREAM_APPS) + list(PROJECT_APPS))
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',

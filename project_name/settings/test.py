@@ -1,8 +1,10 @@
 from .dev import *  # noqa
 
-INSTALLED_APPS += (
-    'django_jenkins',
-)
+INSTALLED_APPS = tuple(
+    list(INSTALLED_APPS)
+    + [
+        'django_jenkins',
+    ])
 
 JENKINS_TASKS = (
     'django_jenkins.tasks.run_pylint',
