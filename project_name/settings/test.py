@@ -1,4 +1,10 @@
-from .dev import *  # noqa
+from . import get_env_variable
+from .base import *  # noqa
+
+DEBUG = bool(get_env_variable('DEBUG', True))
+TEMPLATE_DEBUG = DEBUG
+SECRET_KEY = 'notsosecret'
+NEVERCACHE_KEY = 'notsosecret'
 
 INSTALLED_APPS = tuple(
     list(INSTALLED_APPS)
