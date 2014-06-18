@@ -12,7 +12,10 @@ if __name__ == "__main__":
 
     import_env_vars(os.path.join(get_project_root_path(), env_dir))
 
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "{{ project_name }}.settings.dev")
+    os.environ.setdefault(
+        "DJANGO_SETTINGS_MODULE",
+        "{{ project_name }}.settings." +
+        os.environ.setdefault("DJANGO_SETTINGS_MODE", "dev"))
 
     from django.core.management import execute_from_command_line
 
